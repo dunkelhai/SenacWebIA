@@ -8,10 +8,11 @@ public class BuscaJogador {
 
         while (!encontrou && i < volantes.length) {
             System.out.println("Verificando: " + volantes[i]);
-            if (volantes[i].equals("Koji Nakata")) {
+            if ("Koji Nakata".equals(volantes[i])) {
                 encontrou = true;
                 System.out.println("Jogador encontrado para o time titular!");
             }
+            i++;
         }
     }
 }

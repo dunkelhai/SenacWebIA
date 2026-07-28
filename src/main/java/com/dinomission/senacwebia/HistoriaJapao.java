@@ -5,7 +5,9 @@ public class HistoriaJapao {
         String[] xoguns = {"Oda Nobunaga", "Toyotomi Hideyoshi", null, "Tokugawa Ieyasu"};
 
         for (String xogun : xoguns) {
-            System.out.println("Grande Líder: " + xogun.toUpperCase());
+            if (xogun != null) {
+                System.out.println("Grande Líder: " + xogun.toUpperCase());
+            }
         }
     }
 }
