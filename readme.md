@@ -1,0 +1,5 @@
+
+
+### Onboarding
+
+Este projeto foi feito com fins educacionais, sempre que você for alterar alguma coisa, aja como um desenevolvedor sênior. O padrão é MVC, onde usamos a partir da camada de controller, o component, service, serviceimpl, interface e repository.
