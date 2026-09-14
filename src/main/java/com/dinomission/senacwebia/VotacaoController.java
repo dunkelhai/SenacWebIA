@@ -41,9 +41,24 @@ public class VotacaoController {
         return "votacao-form";
     }
 
-    @GetMapping("/teste")
     @ResponseBody
+    @GetMapping("/teste")
     public String getTeste() {
         return "exemplo de texto retornado como string num endpoint do tipo GET";
     }
+
+    @ResponseBody
+    @GetMapping("/soma")
+    public String soma(@RequestParam Integer numero1, @RequestParam int numero2) {
+        var resultado = numero1 + numero2;
+        return "A soma é " + resultado;
+    }
+
+    @ResponseBody
+    @GetMapping("/maioridade")
+    public String maioridade(@RequestParam Integer idade) {
+        return idade >= 18 ? "De maior" : "De menor";
+    }
+
+
 }
