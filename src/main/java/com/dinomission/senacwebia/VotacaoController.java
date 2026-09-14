@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class VotacaoController {
@@ -38,5 +39,11 @@ public class VotacaoController {
         model.addAttribute("mensagem", mensagem);
         model.addAttribute("podeVotar", podeVotar);
         return "votacao-form";
+    }
+
+    @GetMapping("/teste")
+    @ResponseBody
+    public String getTeste() {
+        return "exemplo de texto retornado como string num endpoint do tipo GET";
     }
 }
