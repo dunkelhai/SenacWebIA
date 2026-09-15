@@ -55,8 +55,8 @@ public class VotacaoController {
     }
 
     @ResponseBody
-    @GetMapping("/maioridade")
-    public String maioridade(@RequestParam Integer idade) {
+    @GetMapping("/verifica_maioridade")
+    public String verifica_maioridade(@RequestParam Integer idade) {
         return idade >= 18 ? "De maior" : "De menor";
     }
 

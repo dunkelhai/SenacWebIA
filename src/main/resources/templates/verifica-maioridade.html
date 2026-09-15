@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Validação de Voto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+        }
+        form {
+            max-width: 320px;
+        }
+        label, input, button {
+            display: block;
+            width: 100%;
+            margin-bottom: 0.8rem;
+        }
+        .resultado {
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+        .permitido {
+            color: green;
+        }
+        .negado {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<h1>Verificar se é de maior</h1>
+
+<form th:action="@{/maioridade}" method="post">
+    <label for="nome">Nome</label>
+    <input id="nome" type="text" name="nome" th:value="${nome}" required>
+
+    <label for="idade">Idade</label>
+    <input id="idade" type="number" name="idade" min="0" th:value="${idade}" required>
+
+    <button type="submit">Validar</button>
+</form>
+
+<p class="resultado"
+   th:if="${mensagem != null}"
+   th:text="${mensagem}"
+   th:classappend="${podeVotar} ? ' permitido' : ' negado'"></p>
+</body>
+</html>
